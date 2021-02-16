@@ -20,7 +20,7 @@ public class SlideImpl extends ModelImpl<Slide> {
             if (attachmentList.isEmpty()){
                 return null;
             }
-            return "/slides/attachment/" + slide.getId();
+            return attachmentList.get(0).getAttachmentUrl();
         }
     }
 }

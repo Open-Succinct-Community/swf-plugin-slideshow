@@ -16,19 +16,6 @@ public class SlidesController extends TemplatedModelController<Slide> {
     public SlidesController(Path path) {
         super(path);
     }
-    @RequireLogin(false)
-    public View attachment(long id){
-        Slide slide = Database.getTable(Slide.class).get(id);
-        if (slide != null){
-            List<Attachment> attachmentList = slide.getAttachments();
-            if (!attachmentList.isEmpty()){
-                return view(attachmentList.get(0),null);
-            }
-        }
-        return new BytesView(getPath(),"".getBytes(), MimeType.TEXT_PLAIN);
-    }
-
-
 
     @Override
     @RequireLogin(false)
