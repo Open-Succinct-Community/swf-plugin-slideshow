@@ -4,10 +4,12 @@ import com.venky.swf.db.annotations.column.COLUMN_SIZE;
 import com.venky.swf.db.annotations.column.IS_NULLABLE;
 import com.venky.swf.db.annotations.column.IS_VIRTUAL;
 import com.venky.swf.db.annotations.column.indexing.Index;
+import com.venky.swf.db.annotations.model.ORDER_BY;
 import com.venky.swf.db.model.Model;
 
 import java.util.List;
 
+@ORDER_BY("PRESENTATION_ID,SEQUENCE,ID")
 public interface Slide extends Model {
     @IS_NULLABLE(false)
     @Index
